@@ -1,0 +1,10 @@
+{
+    "extends": "airbnb",
+    "installedESLint": true,
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+      "space-before-function-paren": "off"
+    }
+}

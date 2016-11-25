@@ -1,0 +1,19 @@
+#APP SETTINGS
+config.yml
+
+#SASS
+.sass-cache/
+
+# package managers
+/node_modules
+/bower_components
+
+# compiled code
+/build/*
+
+#Setting data
+config/settings_data.json
+
+# wraith
+/wraith/shots/*
+/wraith/history/*

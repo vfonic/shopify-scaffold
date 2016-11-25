@@ -1,0 +1,13 @@
+---
+:api_key:
+:password:
+:store: <shop_name>.myshopify.com
+# :theme_id: # production
+:theme_id:
+:whitelist_files:
+- layout/
+- assets/
+- config/
+- snippets/
+- templates/
+- locales/

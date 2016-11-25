@@ -1,0 +1,24 @@
+{
+  "name": "shopify-scaffold",
+  "description": "Shopify scaffold",
+  "main": "",
+  "authors": [
+    "Viktor Fonic"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vfonic/shopify-scaffold",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  },
+  "install": {
+    "path": "assets/javascripts/vendor"
+  }
+}
