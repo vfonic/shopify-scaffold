@@ -1,13 +1,29 @@
 ---
-:api_key:
-:password:
+# live site
+:api_key: ''
+:password: ''
 :store: <shop_name>.myshopify.com
-# :theme_id: # production
-:theme_id:
+:theme_id: '' # production
+# :theme_id: '178547791' # development
 :whitelist_files:
 - layout/
 - assets/
 - config/
+- sections/
 - snippets/
 - templates/
 - locales/
+
+# staging
+# :api_key: ''
+# :password: ''
+# :store: <shop_name>.myshopify.com
+# :theme_id: ''
+# :whitelist_files:
+# - layout/
+# - assets/
+# - config/
+# - sections/
+# - snippets/
+# - templates/
+# - locales/
