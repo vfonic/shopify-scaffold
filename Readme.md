@@ -1,4 +1,4 @@
-# Shopify scaffold
+# Shopify Scaffold
 
 ## Installation
 
