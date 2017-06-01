@@ -35,13 +35,20 @@ module.exports = function(grunt) {
         }]
       }
     },
-    clean: ['build/assets/javascripts/**/*.js'],
+    clean: {
+      js: ['build/assets/javascripts/**/*.js'],
+      css: ['build/assets/stylesheets/**/*.css', 'build/assets/stylesheets/**/*.scss'],
+    },
     sync: {
       main: {
         files: [
           {
             cwd: 'src/',
-            src: ['**/*.liquid', 'config/settings_schema.json'],
+            src: [
+              'assets/*',
+              '**/*.liquid',
+              'config/settings_schema.json'
+            ],
             dest: 'build/'
           },
         ],
@@ -52,14 +59,12 @@ module.exports = function(grunt) {
       compile: {
         options: {
           sourcemap: 'none',
-          style: 'compressed',
-          // lineNumbers: true
         },
         files: [{
           expand: true,
           cwd: 'src/assets/stylesheets',
           src: ['**/*.scss'],
-          dest: 'build/assets/tmp',
+          dest: 'build/assets/stylesheets',
           ext: '.scss.liquid',
         }],
       },
@@ -73,7 +78,7 @@ module.exports = function(grunt) {
         ],
       },
       dist: {
-        src: 'build/assets/tmp/application.scss.liquid',
+        src: 'build/assets/stylesheets/application.scss.liquid',
         dest: 'build/assets/application.scss.liquid'
       },
     },
@@ -84,7 +89,17 @@ module.exports = function(grunt) {
         url: localConfig[':store'],
         theme: localConfig[':theme_id'],
         disable_growl_notifications: false,
-        base: 'build/'
+        base: 'build/',
+        upload_patterns: [
+          'assets/*',
+          'config/*',
+          'layout/*',
+          'locales/*',
+          'sections/*',
+          'snippets/*',
+          'templates/*',
+          'templates/customers/*'
+        ]
       },
     },
     svgstore: {
@@ -100,14 +115,16 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         // beautify: true,
-        // mangle: false
+        // compress: false,
+        // mangle: false,
+        // squeeze: false,
       },
       my_target: {
         files: {
           'build/assets/application.js': [
             'build/assets/javascripts/vendor/**/*.js',
             'build/assets/javascripts/shopify/**/*.js',
-            'build/assets/javascripts/**/*.js'
+            'build/assets/javascripts/**/*.js',
           ],
         },
       },
@@ -115,34 +132,32 @@ module.exports = function(grunt) {
     watch: {
       babel: {
         files: 'src/assets/javascripts/**/*.js',
-        tasks: ['babel']
+        tasks: ['clean:js', 'babel', 'uglify'],
       },
       sync: {
-        files: ['src/**/*.liquid', 'src/config/**'],
+        files: ['src/assets/**', 'src/**/*.liquid', 'src/config/**'],
         tasks: ['sync']
       },
       css: {
         files: [ 'src/assets/stylesheets/**/*.scss'],
-        tasks: ['sass', 'postcss'],
+        tasks: ['clean:css', 'sass', 'postcss'],
       },
       shopify: {
         files: [
           'build/assets/*',
-          'build/config/**',
-          'build/layout/**',
-          'build/locales/**',
-          'build/snippets/**',
-          'build/templates/**',
+          'build/config/settings_schema.json',
+          'build/layout/*',
+          'build/locales/*',
+          'build/sections/*',
+          'build/snippets/*',
+          'build/templates/*',
+          'build/templates/customers/*',
         ],
         tasks: ['shopify'],
       },
       svgstore: {
         files: ['src/assets/svgs/*.svg'],
         tasks: ['svgstore'],
-      },
-      uglify: {
-        files: ['build/assets/javascripts/**/*.js'],
-        tasks: ['uglify'],
       },
     },
   });
