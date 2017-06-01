@@ -1,7 +1,7 @@
 {
   "name": "shopify-scaffold",
   "version": "1.0.0",
-  "description": "Shopify scaffold",
+  "description": "Shopify Scaffold",
   "main": "gruntfile.js",
   "scripts": {
     "test": "echo \"No javascript tests.\" && exit 0"
@@ -17,26 +17,21 @@
   },
   "homepage": "https://github.com/vfonic/shopify-scaffold",
   "devDependencies": {
-    "autoprefixer": "^6.3.7",
+    "autoprefixer": "^7.1.1",
     "babel-preset-es2015-script": "^1.1.0",
-    "eslint": "^3.6.0",
-    "eslint-config-airbnb": "^12.0.0",
-    "eslint-plugin-import": "^1.16.0",
-    "eslint-plugin-jsx-a11y": "^2.2.2",
-    "eslint-plugin-react": "^6.3.0",
-    "growl": "~1.7.0",
-    "grunt": "^0.4.0",
+    "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-sass": "^0.9.2",
-    "grunt-contrib-uglify": "^0.11.0",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-postcss": "^0.8.0",
-    "grunt-shopify": "^0.6.4",
-    "grunt-svgstore": "^0.5.0",
-    "grunt-sync": "^0.5.2",
-    "js-yaml": "^3.4.6",
+    "grunt-shell": "^2.1.0",
+    "grunt-shopify": "^1.0.0",
+    "grunt-svgstore": "^1.0.0",
+    "grunt-sync": "^0.6.2",
+    "js-yaml": "^3.8.4",
     "load-grunt-tasks": "^3.5.2"
   }
 }
